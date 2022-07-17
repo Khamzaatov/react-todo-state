@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+form {
+    margin-left: 15px;
+}
+
+form button {
+    background-color: #6495ed;
+    margin-left: 5px;
+    color: #ffffff;
+    border-radius: 2px;
+    border: 0;
+    height: 26px;
+    font-size: 11px;
+}
+
+form input {
+    width: 150px;
+    padding: 6px;
+    font-size: 10px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    margin-top: 12px;
+
+}
+
+.todo-text {
+    margin-left: 18px;
+    margin-bottom: 5px;
+    font-size: 8px;
+    background-color: #40cfff;
+    color: #423189; 
+    border-radius: 7px;
+    padding: 3px;
+}
+
+.is-error {
+    margin-top: 5px;
+    font-size: 7px;
+    color : red
+}
+
+.todo-delete {
+    margin-left: 5px;
+    position : relative;
+    top: 1px;
+}

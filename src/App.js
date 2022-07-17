@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Main from "./components/Main";
+import Todo from "./components/Todo";
+import './style.css'
 
 function App() {
+
+  const toDo = [
+    {
+      text: 'JavaScript',
+      completed : false
+    },
+
+    {
+      text: 'TypeScript',
+      completed : false
+    },
+
+    {
+      text: 'PHP',
+      completed : false
+    },
+    
+  ]
+
+  const [text, setText] = useState('')
+  const [todos, setTodos] = useState(toDo)
+  const [blur, setBlur] = useState(false)
+  
+
+  const addTodo = () => {
+    if(text.length < 1) {
+      setText(text.trim())
+    } else {
+      setTodos([
+        ...todos,
+        {
+        text: text,
+        completed: false
+      }])
+
+      
+    }
+    setText('')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Main setText={setText} text={text} addTodo={addTodo} setBlur={setBlur} blur={blur}/>
+      <Todo todos={todos} setTodos={setTodos}/>
     </div>
   );
 }
